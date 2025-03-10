@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AutoSender.Services.Foundation.ClientService
 {
-    public partial interface IClientService
+    public partial interface IClientFoundationService
     {
         public ValueTask<IQueryable<Client>> RetrieveAllClient();
     }

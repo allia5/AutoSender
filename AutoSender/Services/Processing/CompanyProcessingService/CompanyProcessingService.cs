@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSender.Services.Foundation.ClientService
+namespace AutoSender.Services.Processing.CompanyProcessingService
 {
-    public partial class ClientService
+    public class CompanyProcessingService : ICompanyProcessingService
     {
     }
 }

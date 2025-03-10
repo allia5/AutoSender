@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AutoSender.Services.Foundation.CompanyService
 {
-    public interface ICompanyService
+    public interface ICompanyFoundationService
     {
         public ValueTask<IQueryable<Company>> RetrieveAllCompanyAsync();
         public ValueTask<CompanyToAddResult> AddCompany(CompanyToAdd company);

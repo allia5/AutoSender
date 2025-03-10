@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSender.Services.Mapper
+namespace AutoSender.Services.Foundation.Mapper
 {
     public static class Mapper
     {
@@ -15,8 +15,8 @@ namespace AutoSender.Services.Mapper
             return new Company
             {
                 CompanyEmail = companyToAdd.Email,
-                CompanyName = companyToAdd.CompanyName,
-                Id = id+1,
+                CompanyName = companyToAdd.JobName,
+                Id = id + 1,
                 JobTitle = "",
                 Occurs = 0,
                 StatusCompany = StatusCompany.NotSent

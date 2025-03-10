@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoSender.Services.Foundation.ClientService
+namespace AutoSender.Services.Orchestration.ClientOrchestrationService
 {
-    public partial class ClientService
+    public interface IClientOrchestrationService
     {
     }
 }

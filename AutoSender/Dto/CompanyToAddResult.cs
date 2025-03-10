@@ -11,9 +11,9 @@ namespace AutoSender.Dto
     {
         public string Email { get; set; }
 
-        public statusSnedEmail Status { get; set; }
+        public statusAddCompany Status { get; set; }
     }
-    public  enum statusSnedEmail
+    public  enum statusAddCompany
     {
         Add,
         NotAdd

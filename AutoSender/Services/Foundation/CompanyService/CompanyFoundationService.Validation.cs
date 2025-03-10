@@ -1,4 +1,5 @@
 ﻿using AutoSender.Dto;
+using AutoSender.Models.Companys;
 using AutoSender.Models.Companys.Exceptions;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AutoSender.Services.Foundation.CompanyService
 {
-    public partial class CompanyService
+    public partial class CompanyFoundationService
     {
         public void validateEmail(string email)
         {
@@ -24,7 +25,8 @@ namespace AutoSender.Services.Foundation.CompanyService
             {
                 throw new InvalidCompanyException(nameof(entry), entry);
             }
-        public void ValidateCompany(CompanyToAdd company)
+        }
+        public void ValidateCompany(Company company)
         {
             if (company is null)
             {

@@ -7,13 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static AutoSender.Services.Mapper.Mapper;
+using static AutoSender.Services.Foundation.Mapper.Mapper;
 namespace AutoSender.Services.Foundation.CompanyService
 {
-    public partial class CompanyService : ICompanyService
+    public partial class CompanyFoundationService : ICompanyFoundationService
     {
         public readonly IStorageBroker storageBroker;
-        public CompanyService( IStorageBroker storageBroker)
+        public CompanyFoundationService( IStorageBroker storageBroker)
         {
             this.storageBroker = storageBroker;
         }
@@ -31,7 +31,7 @@ namespace AutoSender.Services.Foundation.CompanyService
                 return new CompanyToAddResult
                 {
                     Email = DataOnAdd.CompanyEmail,
-                    Status = statusSnedEmail.Add
+                    Status = statusAddCompany.Add
                 };
 
             }
@@ -40,7 +40,7 @@ namespace AutoSender.Services.Foundation.CompanyService
                 return new CompanyToAddResult
                 {
                     Email = company.Email,
-                    Status = statusSnedEmail.NotAdd
+                    Status = statusAddCompany.NotAdd
                 };
             }
         }

@@ -2,6 +2,9 @@
 using AutoSender.Brokers.StorageBroker;
 using AutoSender.Services.Foundation.ClientService;
 using AutoSender.Services.Foundation.CompanyService;
+using AutoSender.Services.Orchestration.ClientOrchestrationService;
+using AutoSender.Services.processing.ClientOrchestrationService;
+using AutoSender.Services.Processing.ClientProcessingService;
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
 
@@ -9,9 +12,9 @@ namespace AutoSender.Startup
 {
     public partial class Program
     {
-        public readonly ICompanyService _CompanyService;
+        public readonly ICompanyFoundationService _CompanyService;
    
-        public Program(ICompanyService companyService)
+        public Program(ICompanyFoundationService companyService)
         {
             this._CompanyService = companyService;
         }
@@ -21,8 +24,10 @@ namespace AutoSender.Startup
         {
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddScoped<IStorageBroker, StorageBroker>();
-            serviceCollection.AddScoped<IClientService, ClientService>();
-            serviceCollection.AddScoped<ICompanyService, CompanyService>();
+            serviceCollection.AddScoped<IClientFoundationService, ClientFoundationService>();
+            serviceCollection.AddScoped<ICompanyFoundationService, CompanyFoundationService>();
+            serviceCollection.AddScoped<IClientProcessingService,ClientProcessingService>();
+            serviceCollection.AddScoped<IClientOrchestrationService, ClientOrchestrationService>();
             serviceCollection.AddScoped<Program>();
             var program = serviceCollection.BuildServiceProvider().GetRequiredService<Program>();
          

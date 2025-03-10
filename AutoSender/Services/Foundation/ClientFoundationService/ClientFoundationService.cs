@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace AutoSender.Services.Foundation.ClientService
 {
-    public partial class ClientService : IClientService
+    public partial class ClientFoundationService : IClientFoundationService
     {
         protected readonly IStorageBroker storageBroker;
-        public ClientService(IStorageBroker storageBroker) =>
+        public ClientFoundationService(IStorageBroker storageBroker) =>
             (this.storageBroker) = (storageBroker);
 
         public async ValueTask<IQueryable<Client>> RetrieveAllClient()
